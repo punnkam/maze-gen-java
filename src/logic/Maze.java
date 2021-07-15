@@ -1,3 +1,5 @@
+package logic;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
@@ -7,8 +9,8 @@ public class Maze {
     private final int HEIGHT;
     private Cell[][] grid;
     
-    public Maze(int size) {
-        WIDTH = size;
+    public Maze(int width, int height) {
+        WIDTH = width;
         HEIGHT = WIDTH;
         grid = new Cell[WIDTH][HEIGHT];
         fillCells();

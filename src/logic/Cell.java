@@ -1,3 +1,6 @@
+package logic;
+
+
 import java.util.Objects;
 import java.beans.PropertyChangeSupport;
 
@@ -9,7 +12,7 @@ public class Cell {
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
-        this.isWall = false;
+        this.isWall = true;
     }
     
     
@@ -19,7 +22,9 @@ public class Cell {
     public boolean getIsWall() { return this.isWall; }
     
     public void setWall(boolean boolz) {
+        Object old = this.isWall;
         this.isWall = boolz;
+        firePCS("Wall", old, boolz);
     }
     
     public void setPCS(PropertyChangeSupport pcs) {
